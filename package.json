@@ -1,0 +1,26 @@
+{
+  "name": "cardconnect-react",
+  "version": "1.0.0",
+  "description": "CardConnect React Sample Client/Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevnat/cardconnect-react.git"
+  },
+  "keywords": [
+    "react",
+    "formik",
+    "cardconnect",
+    "node",
+    "express"
+  ],
+  "author": "Kevin Nathan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevnat/cardconnect-react/issues"
+  },
+  "homepage": "https://github.com/kevnat/cardconnect-react#readme"
+}
