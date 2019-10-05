@@ -1,7 +1,8 @@
 import React from 'react';
 
 export const DisplayFormikState = props =>
-  <div style={{ margin: '1rem 0' }}>
+  <div 
+    style={{ margin: '1rem 0' }}>
     <pre
       style={{
         background: '#f6f8fa',
@@ -9,8 +10,8 @@ export const DisplayFormikState = props =>
         padding: '.5rem',
       }}
     >
-      <strong>props</strong> ={' '}
-      {JSON.stringify(props, null, 2)}
+        <strong>Form Props</strong> ={' '}
+        {JSON.stringify(props, null, 2)}
     </pre>
   </div>;
 

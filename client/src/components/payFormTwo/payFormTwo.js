@@ -218,13 +218,11 @@ export default class PayFormTwo extends Component {
             );
           }}
         </Formik>
-        <Panel
-          lastResponse={(this.state)}
-        >
-          <h3> Display state here</h3>
-          <DisplayResponse/>
-           raw state: {JSON.stringify(this.state)}
-            
+        <Panel>
+          <h3>Auth Response</h3>
+          <DisplayResponse
+            authResp={(this.state)}
+          />
         </Panel>
       </div>
     );

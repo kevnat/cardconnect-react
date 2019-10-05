@@ -1,7 +1,8 @@
 import React from 'react';
 
-export const DisplayResponse = () =>
-  <div style={{ margin: '1rem 0' }}>
+export const DisplayResponse = props =>
+  <div 
+    style={{ margin: '1rem 0' }}>
     <pre
       style={{
         background: '#f6f8fa',
@@ -9,6 +10,7 @@ export const DisplayResponse = () =>
         padding: '.5rem',
       }}
     >
-        {JSON.stringify("this.state")}
+        <strong>Response</strong> ={' '}
+        {JSON.stringify(props,null, 2)}
     </pre>
   </div>;

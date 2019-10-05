@@ -1,7 +1,7 @@
 const axios = require('axios');
 const API = axios.create({
     baseURL: "https://fts.cardconnect.com:6443/cardconnect/rest/",
-    timeout: 1000,
+    timeout: 3200,
     auth: {
         username: 'testing',
         password: 'testing123'
