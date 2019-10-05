@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const DisplayFormikState = props =>
+export const DisplayResponse = () =>
   <div style={{ margin: '1rem 0' }}>
     <pre
       style={{
@@ -9,9 +9,6 @@ export const DisplayFormikState = props =>
         padding: '.5rem',
       }}
     >
-      <strong>props</strong> ={' '}
-      {JSON.stringify(props, null, 2)}
+        {JSON.stringify("this.state")}
     </pre>
   </div>;
-
-

@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import { DisplayFormikState } from "./helper";
+import { DisplayResponse } from "./helper2";
 import { Formik, Field, ErrorMessage } from 'formik';
+import Panel from '../panel';
 import * as Yup from 'yup';
 import API from '../../utils/API';
 
 export default class PayFormTwo extends Component {
+  // constructor(props) {
+  //   super(props);
+  // }
   render() {
     return (
       <div>
@@ -12,10 +17,21 @@ export default class PayFormTwo extends Component {
         <Formik
           initialValues={{ amount:'1.00',name:'kevin',email: 'k@n.com',account :'4444333322221111',expiry:'0823', cvv:'123', postal:'55555'}}
           onSubmit={(values, { setSubmitting }) => {
-            console.log("payFormTwo values:" + values);
+            console.log("request values:" + values);
             API.runAuth(values)
             .then(result => {
-                console.log(result.data);
+                // setState(state: any, callback?: () => void): void
+                this.setState(
+                  {
+                    lastRes: result.data
+                  },
+                    () => {
+                      console.log(this.state);
+                      console.log("in callback")
+                    }
+                )
+                
+
             })
             .catch(error => {
                 console.log(error);
@@ -202,6 +218,14 @@ export default class PayFormTwo extends Component {
             );
           }}
         </Formik>
+        <Panel
+          lastResponse={(this.state)}
+        >
+          <h3> Display state here</h3>
+          <DisplayResponse/>
+           raw state: {JSON.stringify(this.state)}
+            
+        </Panel>
       </div>
     );
   }
