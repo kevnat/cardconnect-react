@@ -10,7 +10,7 @@ const MONGODB_URI =  "mongodb://localhost/payments"
 
 // const db = require('/.models');
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI).then(()=> {
+mongoose.connect(MONGODB_URI,{ useNewUrlParser: true }).then(()=> {
   console.log(`connected to database + ${MONGODB_URI}`);
   })
   .catch(err => {
