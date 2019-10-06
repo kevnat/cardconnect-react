@@ -36,7 +36,11 @@ http://localhost:3000/pay/
 * Footerpage
 
 ## Server
-
+* Server 
+    * AuthRouter
+        * AuthController (hits gateway)
+            * API Config as API
+            * DB Models as DB
 
 
 ### API Config

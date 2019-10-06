@@ -18,7 +18,8 @@ const authSchema = new Schema({
     avsresp: { type: String, required: true },
     entrymode: { type: String, required: true },
     commcard: { type: String, required: true },
-    bintype: { type: String, required: true }
+    bintype: { type: String, required: true },
+    createdAt: {type: Date, default: Date.now, required: true }
 
 });
 

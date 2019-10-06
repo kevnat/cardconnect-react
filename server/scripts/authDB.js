@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Books collection and inserts the books below
-
 mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/payments"
@@ -10,6 +8,7 @@ mongoose.connect(
 
 const authSeed = 
   {
+    createdAt: Date.now,
     amount: "1.00",
     resptext: "Approval",
     commcard: " C ",

@@ -18,9 +18,8 @@ function testConnect() {
 
 function callAuth (req) {
     //combine req with mid stored in mid-config
-    // let authReq = req + config;
     req.body.merchid = API.defaults.data.merchid;
-    console.log(req.body);
+    // req.body.createdAt = Date.now();
     //sending request to cardconnect API /auth
     return API.put('/auth', req.body)
     .then(authResp => {
@@ -29,6 +28,7 @@ function callAuth (req) {
     })
     .then(authResp => {
         //writing record to Auth table
+        authResp.data.createdAt = Date.now();
         db.Auth.collection.insertOne(authResp.data);
         return authResp;
     })

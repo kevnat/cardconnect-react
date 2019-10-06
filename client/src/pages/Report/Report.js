@@ -13,6 +13,10 @@ class Report extends Component {
       columns: [{
         Header: 'GUID',
         accessor: '_id'
+      },
+      {
+        Header: 'createdAt',
+        accessor: 'createdAt'
       },{
         Header: 'Amount',
         accessor: 'amount'
