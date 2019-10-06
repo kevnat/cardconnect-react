@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { DisplayFormikState } from "./helper";
 import { DisplayResponse } from "./helper2";
 import { Formik, Field, ErrorMessage } from 'formik';
-import Panel from '../panel';
+// import Panel from '../panel';
 import * as Yup from 'yup';
 import API from '../../utils/API';
 import { Container, Row, Col } from 'reactstrap';
@@ -85,7 +85,8 @@ export default class PayFormTwo extends Component {
                 <Row>
                   
                   <Col md={{ size: 6, order: 1 }}>
-                    <h4>Input Form</h4>
+                    <h5>Input Form</h5>
+                    <br></br>
                     <form onSubmit={handleSubmit}>
 
                       {/* <Field component="select" name="Month">
@@ -94,8 +95,8 @@ export default class PayFormTwo extends Component {
                   <option value="blue">Blue</option>
                 </Field> */}
                       <label htmlFor="amount" style={{ display: 'float' }}>
-                        Amount:
-                </label>
+                        Amount:  
+                      </label>
                       <Field
                         id="amount"
                         placeholder="99.99"
@@ -223,25 +224,35 @@ export default class PayFormTwo extends Component {
                     </form>
                   </Col>
                   <Col md={{ size: 6, order: 2 }}>
-                  <h4>Form State</h4>
+                  <h5>Form State</h5>
                     <DisplayFormikState {...props} />
                   </Col>
-                  <Col md={{ size: 9, order: 3 }}>
-                    <h4>Auth Response</h4>
+                  <Col md={{ size: 6, order: 3 }}>
+                    <h5>Auth Response</h5>
                     <DisplayResponse
                       authResp={(this.state)}
                     />
                 </Col>
-                <Col md={{ size: 3, order: 4 }}>
+                <Col md={{ size: 6, order: 4 }}>
 
-                    <h4>Table</h4>   
+                    <h5>Table</h5>   
+
                 </Col>
-                
                 </Row>
 
               );
             }}
           </Formik>
+          {/* <Row>
+            <Col md={{ size: 6, order: 5 }}>
+
+            Test
+            </Col>
+            <Col md={{ size: 6, order: 6 }}>
+
+            Another column
+            </Col>
+          </Row> */}
         </Container>
 
 

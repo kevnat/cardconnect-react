@@ -38,6 +38,17 @@ function callAuth (req) {
     })
 }
 
+function callReport () {
+    return db.Auth.find()
+    .then(result => {
+        return result
+    })
+    .catch(error => {
+        console.log(error);
+        throw error;
+    })
+}
+
 function callVoid () {
     console.log("calling Void");
     return API.put('/void', {
@@ -86,6 +97,7 @@ function callInquire () {
 const service = {
     test: testConnect,
     auth: callAuth,
+    report: callReport,
     void: callVoid,
     refund: callRefund,
     inquire: callInquire
