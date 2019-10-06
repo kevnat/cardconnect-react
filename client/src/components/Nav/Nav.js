@@ -29,7 +29,7 @@ export default class Heading extends Component {
       <div>
         <Navbar color="indigo" fixed="top" dark expand="md">
           <NavbarBrand href="/home">
-            <strong>ReactPay</strong>
+            <strong>cardconnect.app</strong>
           </NavbarBrand>
           {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
           <Collapse isOpen={this.state.collapse} navbar>

@@ -6,15 +6,11 @@ import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import API from '../../utils/API';
 import { Container, Row, Col } from 'reactstrap';
-// import Container from 'react-bootstrap/Container';
+import Tokenizer from "../../components/tokenizer";
 
 export default class PayFormTwo extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
   render() {
     return (
-
       <div>
         <Container>
           <Formik
@@ -236,23 +232,14 @@ export default class PayFormTwo extends Component {
                 <Col md={{ size: 6, order: 4 }}>
 
                     <h5>Table</h5>   
-
+                    <Tokenizer />
                 </Col>
                 </Row>
 
               );
             }}
           </Formik>
-          {/* <Row>
-            <Col md={{ size: 6, order: 5 }}>
 
-            Test
-            </Col>
-            <Col md={{ size: 6, order: 6 }}>
-
-            Another column
-            </Col>
-          </Row> */}
         </Container>
 
 

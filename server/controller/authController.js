@@ -1,7 +1,7 @@
-// const axios = require('axios');
 const API = require('../config/api-config');
-// const config = require('../config/mid-config');
 const db = require('../models');
+// const config = require('../config/mid-config');
+// const axios = require('axios');
 
 //test connect function
 function testConnect() {
@@ -19,16 +19,15 @@ function testConnect() {
 function callAuth (req) {
     //combine req with mid stored in mid-config
     req.body.merchid = API.defaults.data.merchid;
-    // req.body.createdAt = Date.now();
     //sending request to cardconnect API /auth
     return API.put('/auth', req.body)
     .then(authResp => {
-        // console.log(authResp);
         return authResp;
     })
     .then(authResp => {
-        //writing record to Auth table
+        //adding timestamp to authResp 
         authResp.data.createdAt = Date.now();
+        //writing record to Auth table
         db.Auth.collection.insertOne(authResp.data);
         return authResp;
     })

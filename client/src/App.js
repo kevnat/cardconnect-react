@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // eslint-disable-next-line
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Pay from "./pages/Pay";
