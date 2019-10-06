@@ -45,8 +45,6 @@ http://localhost:3000/pay/
 
 ### API Config
 ```
-
-
 baseURL: "https://fts.cardconnect.com:6443/cardconnect/rest/",
 timeout: 3200,
 auth: {
