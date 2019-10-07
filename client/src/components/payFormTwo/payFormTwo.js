@@ -29,8 +29,6 @@ export default class PayFormTwo extends Component {
                       console.log("in callback")
                     }
                   )
-
-
                 })
                 .catch(error => {
                   console.log(error);
