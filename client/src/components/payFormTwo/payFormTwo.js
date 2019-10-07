@@ -7,6 +7,7 @@ import * as Yup from 'yup';
 import API from '../../utils/API';
 import { Container, Row, Col } from 'reactstrap';
 import Tokenizer from "../../components/tokenizer";
+import PaymentInputs from "../../components/paymentInputs";
 
 export default class PayFormTwo extends Component {
   render() {
@@ -16,7 +17,6 @@ export default class PayFormTwo extends Component {
           <Formik
             initialValues={{ amount: '1.00', name: 'kevin', email: 'k@n.com', account: '4444333322221111', expiry: '0823', cvv: '123', postal: '55555' }}
             onSubmit={(values, { setSubmitting }) => {
-              console.log("request values:" + values);
               API.runAuth(values)
                 .then(result => {
                   // setState(state: any, callback?: () => void): void
@@ -37,9 +37,9 @@ export default class PayFormTwo extends Component {
                   throw error;
                 })
               setTimeout(() => {
-                alert("Click ok to confirm details.\n" + JSON.stringify(values, null, 2));
+                // alert("Click ok to confirm details.\n" + JSON.stringify(values, null, 2));
                 setSubmitting(false);
-              }, 500);
+              }, 200);
             }}
             validationSchema={Yup.object().shape({
               amount: Yup.string()
@@ -84,12 +84,14 @@ export default class PayFormTwo extends Component {
                     <h5>Input Form</h5>
                     <br></br>
                     <form onSubmit={handleSubmit}>
-
+                    <PaymentInputs />
                       {/* <Field component="select" name="Month">
                   <option value="January">Red</option>
                   <option value="February">Green</option>
                   <option value="blue">Blue</option>
                 </Field> */}
+                <br />
+                <br />
                       <label htmlFor="amount" style={{ display: 'float' }}>
                         Amount:  
                       </label>
@@ -233,13 +235,13 @@ export default class PayFormTwo extends Component {
 
                     <h5>Table</h5>   
                     <Tokenizer />
+                    
                 </Col>
                 </Row>
 
               );
             }}
           </Formik>
-
         </Container>
 
 
