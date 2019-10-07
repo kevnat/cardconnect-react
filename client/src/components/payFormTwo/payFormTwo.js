@@ -81,8 +81,9 @@ export default class PayFormTwo extends Component {
                   <Col md={{ size: 6, order: 1 }}>
                     <h5>Input Form</h5>
                     <br></br>
-                    <form onSubmit={handleSubmit}>
                     <PaymentInputs />
+                    <form onSubmit={handleSubmit}>
+                    
                       {/* <Field component="select" name="Month">
                   <option value="January">Red</option>
                   <option value="February">Green</option>
