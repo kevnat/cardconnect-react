@@ -29,7 +29,8 @@ export default function PaymentInputs() {
             expiryDate: '',
             cvc: ''
           }}
-          onSubmit={data => console.log(data)}
+          onSubmit={data => 
+            console.log(data)}
           validate={() => {
             let errors = {};
             if (meta.erroredInputs.cardNumber) {

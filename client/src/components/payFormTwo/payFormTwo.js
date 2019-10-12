@@ -1,13 +1,20 @@
 import React, { Component } from "react";
 import { DisplayFormikState } from "./helper";
 import { DisplayResponse } from "./helper2";
-import { Formik, Field, ErrorMessage } from 'formik';
+import { 
+  Formik, 
+  Field, 
+  ErrorMessage, 
+  //getIn 
+} 
+  from 'formik';
 // import Panel from '../panel';
 import * as Yup from 'yup';
 import API from '../../utils/API';
 import { Container, Row, Col } from 'reactstrap';
 import Tokenizer from "../../components/tokenizer";
 import PaymentInputs from "../../components/paymentInputs";
+
 
 export default class PayFormTwo extends Component {
   render() {
@@ -81,7 +88,9 @@ export default class PayFormTwo extends Component {
                   <Col md={{ size: 6, order: 1 }}>
                     <h5>Input Form</h5>
                     <br></br>
-                    <PaymentInputs />
+                    <PaymentInputs
+
+                    />
                     <form onSubmit={handleSubmit}>
                     
                       {/* <Field component="select" name="Month">
@@ -242,8 +251,6 @@ export default class PayFormTwo extends Component {
             }}
           </Formik>
         </Container>
-
-
       </div>
     );
   }
