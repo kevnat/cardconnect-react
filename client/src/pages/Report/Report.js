@@ -17,7 +17,9 @@ class Report extends Component {
       {
         Header: 'Action',
         Cell: ActionCell,
-        getProps:() => ({ manageTxn: () => alert("clicked")})
+        getProps:() => ({ manageTxn: () => 
+          // display a modal with txn details, void button and refund button
+          alert("clicked")})
       },
       {
         Header: 'RetRef',
