@@ -1,29 +1,35 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Heading from "../../components/Nav/Nav";
 import ReportForm from "../../components/reportForm";
 import FooterPage from "../../components/footer";
 import API from "../../utils/API";
+import ModalExample from "../../components/modal";
 
 
 class Report extends Component {
   constructor(props) {
     super(props);
-    function ActionCell({ value, columnProps: { rest: { manageTxn } } }) {
-      return <button onClick={manageTxn}>Manage</button>
+    function ActionCell({ value, columnProps: { rest: { showModal } } }) {
+      // return <a href = 
+      // return <button onClick={showModal}>Manage</button>
+      return <ModalExample initialModalState={false} />
     }
     this.state = {
-      //store data here
       columns: [
       {
         Header: 'Action',
         Cell: ActionCell,
-        getProps:() => ({ manageTxn: () => 
+        getProps:() => ({ showModal: () => 
           // display a modal with txn details, void button and refund button
-          alert("clicked")})
+          // <TxnModal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}></TxnModal>
+          alert("clicked")
+        }),
+        width: 115
       },
       {
         Header: 'RetRef',
-        accessor: 'retref'
+        accessor: 'retref',
+        width: 135
       },
       {
         Header: 'GUID',
@@ -95,7 +101,7 @@ class Report extends Component {
   
 componentDidMount() { 
   //call API put result in state
-  console.log("component did mount!");
+  // console.log("component did mount!");
   API.getReport()
   .then(result => {
     this.setState({
@@ -121,6 +127,7 @@ componentDidMount() {
             resp={this.state.data}
             cols={this.state.columns}
           />
+          
         </div>
         <div>
           <FooterPage />
