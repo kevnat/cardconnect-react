@@ -9,20 +9,21 @@ import ModalExample from "../../components/modal";
 class Report extends Component {
   constructor(props) {
     super(props);
-    function ActionCell({ value, columnProps: { rest: { showModal } } }) {
+    function ManageModal({ data, columnProps: { rest: { showModal } } }) {
       // return <a href = 
       // return <button onClick={showModal}>Manage</button>
-      return <ModalExample initialModalState={false} />
+      return <ModalExample 
+      initialModalState={false}
+      />
     }
     this.state = {
       columns: [
       {
         Header: 'Action',
-        Cell: ActionCell,
+        Cell: ManageModal,
         getProps:() => ({ showModal: () => 
-          // display a modal with txn details, void button and refund button
-          // <TxnModal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}></TxnModal>
           alert("clicked")
+          // console.log(this.state.columns)
         }),
         width: 115
       },
