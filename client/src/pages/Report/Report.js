@@ -9,11 +9,18 @@ import ModalExample from "../../components/modal";
 class Report extends Component {
   constructor(props) {
     super(props);
-    function ManageModal({ data, columnProps: { rest: { showModal } } }) {
+    function getCurrentRow(rowInfo){
+      console.log("in getCurrentRow func")
+    };
+    function ManageModal({ 
+      // data, 
+      // columnProps: { rest: { showModal } } 
+    }) {
       // return <a href = 
       // return <button onClick={showModal}>Manage</button>
       return <ModalExample 
       initialModalState={false}
+      // retRef={this.getTdProps}
       />
     }
     this.state = {
@@ -21,10 +28,10 @@ class Report extends Component {
       {
         Header: 'Action',
         Cell: ManageModal,
-        getProps:() => ({ showModal: () => 
-          alert("clicked")
-          // console.log(this.state.columns)
-        }),
+        // getProps:() => ({ showModal: () => 
+        //   alert("clicked")
+        //   // console.log(this.state.columns)
+        // }),
         width: 115
       },
       {
@@ -127,6 +134,7 @@ componentDidMount() {
           <ReportForm 
             resp={this.state.data}
             cols={this.state.columns}
+            currentRow={this.getCurrentRow}
           />
           
         </div>
