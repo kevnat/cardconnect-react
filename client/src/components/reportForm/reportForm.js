@@ -15,11 +15,10 @@ class ReportForm extends Component {
         getTdProps={(state, rowInfo, column, instance) => {
           return {
             onClick: (e, handleOriginal) => {
-              console.log('A Td Element was clicked!')
-              console.log('it produced this event:', e)
-              console.log('It was in this column:', column)
-              console.log('It was in this row:', rowInfo)
-              console.log('It was in this table instance:', instance)
+              // console.log('it produced this event:', e)
+              // console.log('It was in this column:', column)
+              console.log('A row was clicked:', rowInfo)
+              // console.log('It was in this table instance:', instance)
               if (handleOriginal) {
                 handleOriginal()
               }
