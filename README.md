@@ -41,8 +41,8 @@ http://localhost:3000/pay/
 
 ## Server
 AuthController (hits gateway)
-    * API Config as API
-    * DB Models as DB
+API Config as API
+DB Models as DB
 AuthRouter
 Server
 
