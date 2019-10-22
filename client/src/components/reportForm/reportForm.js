@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ReactTable from "react-table";
-import 'react-table/react-table.css'
+import 'react-table/react-table.css';
+import API from "../../utils/API";
+
 
 class ReportForm extends Component {
   constructor(props) {
@@ -25,9 +27,8 @@ class ReportForm extends Component {
               // console.log('It was in this column:', column)
               // console.log('It was in this table instance:', instance)
               console.log('A row was clicked:', rowInfo.row.retref);
+              // working with the below State
               this.state.selectedRowState = rowInfo.row.retref;
-              // this.props.getCurrentRow(rowInfo.row.retref);
-              console.log(this.state);
               if (handleOriginal) {
                 handleOriginal()
               }

@@ -1,6 +1,6 @@
 const API = require('../config/api-config');
 const db = require('../models');
-// const config = require('../config/mid-config');
+const UAT = require('../config/mid-config');
 // const axios = require('axios');
 
 //test connect function
@@ -48,15 +48,11 @@ function callReport () {
     })
 }
 
-function callVoid () {
-    console.log("calling Void");
-    return API.put('/void', {
-        merchid: config.merchid,
-        retref: config.retref
-    })
-    .then(result => {
-        console.log(result.data);
-        return result;
+function callVoid (req) {
+    req.body = UAT.defaults.data;
+    return UAT.put('/void', req.body)
+    .then(voidResp => {
+        return voidResp;
     })
     .catch(error => {
         console.log(error);

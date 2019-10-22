@@ -21,7 +21,6 @@ router.put('/api/auth', function (req,res) {
         console.log("_______________________Response_______________________");
         console.log(result.data);
         res.json(result.data);
-        // return result.data;
     })
     .catch(error => {
         console.log(error);
@@ -42,18 +41,31 @@ router.get('/api/report', function (req, res) {
 
 })
 
-// router.put('/api/void', function (req, res, next) {
-//     service.void();
-// })
+router.put('/api/void', function (req, res) {
+    //logging incoming request
+    console.log("_______________________Request_______________________")
+    console.log(req.body);
+    return service.void(req)
+    .then(result => {
+        //logging response returned from mongoose insert
+        console.log("_______________________Response_______________________");
+        console.log(result.data);
+        res.json(result.data);
+    })
+    .catch(error => {
+        console.log(error);
+        throw error;
+    });
+})
 
-// router.put('/api/refund', function (req, res, next) {
-//     service.refund();
-//     res.json('refund response')
-// })
+router.put('/api/refund', function (req, res, next) {
+    service.refund();
+    res.json('refund response')
+})
 
-// router.put('/api/inquire/', function (req, res, next) {
-//     // console.log(retref);
-//     service.inquire();
-// })
+router.put('/api/inquire/', function (req, res, next) {
+    // console.log(retref);
+    service.inquire();
+})
 
 module.exports = router 

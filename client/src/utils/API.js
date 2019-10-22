@@ -36,6 +36,15 @@ export default  {
             console.log(result.data);
             return result;
         })
+    },
+
+    void: function(retRef) {
+        console.log('voiding: ' + retRef);
+        return axios.put('/api/void/', retRef)
+        .then(result => {
+            console.log(result.status + " || " + result.statusText );
+            return result;
+        });
     }
 }
 

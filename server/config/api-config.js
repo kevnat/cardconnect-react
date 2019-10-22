@@ -12,5 +12,4 @@ const API = axios.create({
     }
   });
 
-
 module.exports = API
