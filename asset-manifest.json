@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/cardconnect-react/static/css/main.a1373248.chunk.css",
+    "main.js": "/cardconnect-react/static/js/main.6f78c577.chunk.js",
+    "main.js.map": "/cardconnect-react/static/js/main.6f78c577.chunk.js.map",
+    "runtime-main.js": "/cardconnect-react/static/js/runtime-main.628b4e2c.js",
+    "runtime-main.js.map": "/cardconnect-react/static/js/runtime-main.628b4e2c.js.map",
+    "static/css/2.94476e8b.chunk.css": "/cardconnect-react/static/css/2.94476e8b.chunk.css",
+    "static/js/2.7c997757.chunk.js": "/cardconnect-react/static/js/2.7c997757.chunk.js",
+    "static/js/2.7c997757.chunk.js.map": "/cardconnect-react/static/js/2.7c997757.chunk.js.map",
+    "index.html": "/cardconnect-react/index.html",
+    "precache-manifest.4e22b258d2c911c8a668c7fa549464a5.js": "/cardconnect-react/precache-manifest.4e22b258d2c911c8a668c7fa549464a5.js",
+    "service-worker.js": "/cardconnect-react/service-worker.js",
+    "static/css/2.94476e8b.chunk.css.map": "/cardconnect-react/static/css/2.94476e8b.chunk.css.map",
+    "static/css/main.a1373248.chunk.css.map": "/cardconnect-react/static/css/main.a1373248.chunk.css.map",
+    "static/media/mdb.css": "/cardconnect-react/static/media/arrow_right.8ef6a08c.svg",
+    "static/media/font-awesome.min.css": "/cardconnect-react/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.628b4e2c.js",
+    "static/css/2.94476e8b.chunk.css",
+    "static/js/2.7c997757.chunk.js",
+    "static/css/main.a1373248.chunk.css",
+    "static/js/main.6f78c577.chunk.js"
+  ]
+}
