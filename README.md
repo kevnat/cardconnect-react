@@ -79,7 +79,7 @@ methods
 
 ### Issues
 
-Report page instatiates react table 
+Report page instantiates react table 
 - Manage Modal function 
     - prop of initialModalState = false
 - Manage Modal called from within first column of react table
