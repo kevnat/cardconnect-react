@@ -63,6 +63,7 @@ data: {merchid: '496160873888'}
 1. testConnect
 2. auth
 3. report
+4. void
 
 ## To Do:
 token hooks
@@ -76,3 +77,14 @@ dates
 methods
 - apple & google pay
 
+### Issues
+
+Report page instatiates react table 
+- Manage Modal function 
+    - prop of initialModalState = false
+- Manage Modal called from within first column of react table
+- contains child reportForm component
+    - getTdProps prop of reactTable calls handleModal on click
+    - !! currently setting state.selectedRowState with Row details
+        - should I use state here?
+        - do I setup a callback as the parent's prop to handle the state from the child? 

@@ -31,7 +31,7 @@ router.put('/api/auth', function (req,res) {
 router.get('/api/report', function (req, res) {
     return service.report(req)
     .then(result => {
-        console.log("report loaded");
+        // console.log("report loaded");
         res.json(result);
     })
     .catch(error => {

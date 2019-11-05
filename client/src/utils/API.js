@@ -38,7 +38,7 @@ export default  {
         })
     },
 
-    void: function(retRef) {
+    runVoid: function(retRef) {
         console.log('voiding: ' + retRef);
         return axios.put('/api/void/', retRef)
         .then(result => {

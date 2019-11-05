@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import Heading from "../../components/Nav/Nav";
-import PayFormTwo from "../../components/payFormTwo";
+import BoltForm from "../../components/BoltForm";
 import Footer from "../../components/footer";
 // import VoidForm from "../../components/voidForm";
 // import Tokenizer from "../../components/tokenizer";
 // import Col from 'react-bootstrap/Col';
 
 
-class Pay extends Component {
+class Bolt extends Component {
 
   render() {
     return (
@@ -19,7 +19,7 @@ class Pay extends Component {
 
 
         <div className="container">
-          <PayFormTwo/>
+          <BoltForm/>
         </div>
         <div>
           <Footer/>
@@ -29,4 +29,4 @@ class Pay extends Component {
   }
 }
 
-export default Pay;
+export default Bolt;

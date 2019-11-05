@@ -3,14 +3,16 @@ import ReactTable from "react-table";
 import 'react-table/react-table.css';
 import API from "../../utils/API";
 
-
 class ReportForm extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
+    // tableRef
     this.state = {
-        selectedRowState: null
-    };    
+      selectedRowState: null
+    };
 }
+
   render() {
     return (
       <div>
@@ -22,16 +24,15 @@ class ReportForm extends Component {
         filterable={false}
         getTdProps={(state, rowInfo, column, instance) => {
           return {
-            onClick: (e, handleOriginal) => {
-              // console.log('it produced this event:', e)
-              // console.log('It was in this column:', column)
-              // console.log('It was in this table instance:', instance)
+            onClick: (e, handleModal) => {
               console.log('A row was clicked:', rowInfo.row.retref);
-              // working with the below State
+              // working with the below State/props
+              // this.props.tableRef = rowInfo.row.retref;
               this.state.selectedRowState = rowInfo.row.retref;
-              if (handleOriginal) {
-                handleOriginal()
+              if (handleModal) {
+                handleModal()
               }
+              // return rowInfo.row.retref;
             }
           }
         }

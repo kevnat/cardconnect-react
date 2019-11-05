@@ -14,13 +14,10 @@ class Report extends Component {
     //   this.props.currentRow = rowInfo;
     // };
 
-    function ManageModal({ 
-      // data, 
-      // columnProps: { rest: { showModal } } 
-    }) {
+    function ManageModal() {
       return <ModalExample 
       initialModalState={false}
-      // retRef={this.getTdProps}
+      // retRef={}
       />
     }
     this.state = {
@@ -118,14 +115,7 @@ componentDidMount() {
   })
 }
 
-voidActivity() {
 
-  API.void()
-  .then(result => {
-
-  })
-
-}
 
   render() {
     // const report = this.props.report;
@@ -139,7 +129,7 @@ voidActivity() {
           <ReportForm 
             resp={this.state.data}
             cols={this.state.columns}
-            // currentRow={this.getCurrentRow}
+            currentRow={this.state.selectedRowState}
           />
           
         </div>
