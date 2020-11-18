@@ -16,7 +16,7 @@ Create local payments mongo database and an 'auths' collection.
 
 ## Screenshots
 #### Pay Form
-![Payform](assets/Payform.jpg)
+![Payform](assets/Payform2.jpg)
 
 #### Transaction Report 
 ![Report](assets/Report.jpg)
