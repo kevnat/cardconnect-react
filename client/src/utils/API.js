@@ -45,6 +45,14 @@ export default  {
             console.log(result.status + " || " + result.statusText );
             return result;
         });
+    },
+    setConfig: function(data) {
+        console.log(data);
+        return axios.put('/api/setup/', data)
+        .then(result => {
+            console.log(result.status + " || " + result.statusText );
+            return result;
+        });
     }
 }
 

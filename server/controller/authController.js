@@ -89,13 +89,36 @@ function callInquire () {
     })
 }
 
+function saveConfig (req) {
+    //combine req with mid stored in mid-config
+    req.body.merchid = API.defaults.data.merchid;
+    //sending request to cardconnect API /auth
+    return API.put('/setup', req.body)
+    .then(setupResp => {
+        return setupResp;
+    })
+    .then(setupResp => {
+        //adding timestamp to authResp 
+        setupResp.data.createdAt = Date.now();
+        //writing record to Auth table
+        db.Merchant.collection.insertOne(setupResp.data);
+        return setupResp;
+    })
+    .catch(error => {
+        console.log(error);
+        throw error;
+    })
+}
+
+
 const service = {
     test: testConnect,
     auth: callAuth,
     report: callReport,
     void: callVoid,
     refund: callRefund,
-    inquire: callInquire
+    inquire: callInquire,
+    setup: saveConfig
 }
 
 module.exports = service;
