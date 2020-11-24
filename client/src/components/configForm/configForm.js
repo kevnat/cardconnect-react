@@ -27,7 +27,17 @@ import {
         <div>
           <Container>
           <Formik
-            initialValues={{ merchid: '496160873888', site: 'fts', gwkey: 'blag', boltmerchid: '496160873888', bolthsn: 'fts', boltkey: 'blag' }}
+            initialValues=
+          {
+              { 
+              gwmerchid: '456456456456', 
+              gwsite: 'fts', 
+              gwkey: 'dGVzdGluZzp0ZXN0aW5nMTIz', 
+              boltmerchid: '496160873888', 
+              bolthsn: '17350SC81400547', 
+              boltkey: 'oD70nAoHqiIKJVSwu/9A8RrkjPsg65weh8pN8M1y4pA=' 
+            }
+          }
             onSubmit={(values, { setSubmitting }) => {
               API.setConfig(values)
                 .then(result => {
@@ -52,23 +62,17 @@ import {
               }, 200);
             }}
             validationSchema={Yup.object().shape({
-              merchid: Yup.string()
-                .required('gateway merchant id'),
-              site: Yup.string()
+              gwmerchid: Yup.string()
+                .required('enter gateway merchant id!'),
+              gwsite: Yup.string()
                 .required('gateway site'),
               gwkey: Yup.string()
-                .email()
                 .required('gateway key'),
               boltmerchid: Yup.string()
-                .min(15)
-                .max(16)
                 .required('bolt merchant id'),
               bolthsn: Yup.string()
-                .length(4)
                 .required('bolt hsn'),
               boltkey: Yup.string()
-                .min(3)
-                .max(4)
                 .required('bolt key')
             })}
           >
@@ -102,38 +106,38 @@ import {
                 {/* <br /> */}
                 <h6><strong> Gateway Configuration</strong></h6>
 
-                      <label htmlFor="merchid" style={{ display: 'float' }}>
+                      <label htmlFor="gwmerchid" style={{ display: 'float' }}>
                         gw merchid:  
                       </label>
                       <Field
-                        id="merchid"
-                        placeholder="99.99"
+                        id="gwmerchid"
+                        placeholder="496160873888"
                         type="text"
-                        value={values.merchid}
+                        value={values.gwmerchid}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className={
-                          errors.merchid && touched.merchid ? 'text-input error' : 'text-input'
+                          errors.gwmerchid && touched.gwmerchid ? 'text-input error' : 'text-input'
                         }
                       />
-                      <ErrorMessage name="merchid" />
+                      <ErrorMessage name="gwmerchid" />
                       <br />
 
-                      <label htmlFor="site" style={{ display: 'float' }}>
+                      <label htmlFor="gwsite" style={{ display: 'float' }}>
                         gw site:
                 </label>
                       <Field
-                        id="site"
-                        placeholder="Enter your site"
+                        id="gwsite"
+                        placeholder="fts"
                         type="text"
-                        value={values.site}
+                        value={values.gwsite}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className={
-                          errors.site && touched.site ? 'text-input error' : 'text-input'
+                          errors.gwsite && touched.gwsite ? 'text-input error' : 'text-input'
                         }
                       />
-                      <ErrorMessage name="site" />
+                      <ErrorMessage name="gwsite" />
 
                       <br />
                       <label htmlFor="gwkey" style={{ display: 'float' }}>
@@ -141,7 +145,7 @@ import {
                 </label>
                       <Field
                         id="gwkey"
-                        placeholder="First and Last Name"
+                        placeholder="dGVzdGluZzp0ZXN0aW5nMTIz"
                         type="text"
                         value={values.gwkey}
                         onChange={handleChange}

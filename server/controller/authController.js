@@ -90,24 +90,17 @@ function callInquire () {
 }
 
 function saveConfig (req) {
-    //combine req with mid stored in mid-config
-    req.body.merchid = API.defaults.data.merchid;
-    //sending request to cardconnect API /auth
-    return API.put('/setup', req.body)
-    .then(setupResp => {
-        return setupResp;
-    })
-    .then(setupResp => {
-        //adding timestamp to authResp 
-        setupResp.data.createdAt = Date.now();
-        //writing record to Auth table
-        db.Merchant.collection.insertOne(setupResp.data);
-        return setupResp;
-    })
-    .catch(error => {
-        console.log(error);
-        throw error;
-    })
+const newMerchant = req.body;
+ db.Merchant.collection.insertOne(newMerchant)
+  .then(newMidRes => {
+    console.log(result.result.n + " New merchant record inserted!");
+    return newMidRes;
+    // process.exit(0);
+  })
+  .catch(error => {
+    console.error(error);
+    throw error;
+  });
 }
 
 
