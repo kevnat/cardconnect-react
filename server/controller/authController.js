@@ -90,11 +90,11 @@ function callInquire () {
 }
 
 function saveConfig (req) {
-const newMerchant = req.body;
- db.Merchant.collection.insertOne(newMerchant)
-  .then(newMidRes => {
+// const newMerchant = req.body;
+ return db.Merchant.collection.insertOne(req.body)
+  .then(result => {
     console.log(result.result.n + " New merchant record inserted!");
-    return newMidRes;
+    return result;
     // process.exit(0);
   })
   .catch(error => {

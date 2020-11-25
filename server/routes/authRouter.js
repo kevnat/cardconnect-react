@@ -28,28 +28,25 @@ router.put('/api/auth', function (req,res) {
     });
 })
 
-router.put('/api/setup', function (req,res) {
-//logging incoming request
-console.log("_______________________Request_______________________")
-console.log(req.body);
-return service.setup(req)
-.then(result => {
-    //logging response returned from mongoose insert
-    console.log("_______________________Response_______________________");
-    console.log(result.data);
-    res.json(result.data);
-})
-.catch(error => {
-    console.log(error);
-    throw error;
-});
 
-})
 
 router.get('/api/report', function (req, res) {
     return service.report(req)
     .then(result => {
-        // console.log("report loaded");
+        console.log("report loaded @authRouter");
+        res.json(result);
+    })
+    .catch(error => {
+        console.log(error);
+        throw error;
+    })
+
+})
+
+router.put('/api/setup', function (req, res) {
+    return service.setup(req)
+    .then(result => {
+        console.log("merchant created!" + result);
         res.json(result);
     })
     .catch(error => {
