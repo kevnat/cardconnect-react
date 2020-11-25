@@ -21,18 +21,21 @@ class ReportForm extends Component {
         columns={this.props.cols}
         defaultPageSize={15}
         minRows={3}
+        retref={this.props.retref}
         filterable={false}
         getTdProps={(state, rowInfo, column, instance) => {
           return {
             onClick: (e, handleModal) => {
-              console.log('A row was clicked:', rowInfo.row.retref);
               // working with the below State/props
-              // this.props.tableRef = rowInfo.row.retref;
+              // this.props.retref = rowInfo.row.retref;
+              // let retref = rowInfo.row.retref
               this.state.selectedRowState = rowInfo.row.retref;
               if (handleModal) {
                 handleModal()
+                console.log('A row was clicked:', rowInfo.row.retref);
+                console.log(this.state);
               }
-              // return rowInfo.row.retref;
+              return rowInfo.row.retref;
             }
           }
         }

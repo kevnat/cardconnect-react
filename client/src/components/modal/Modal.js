@@ -2,11 +2,10 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const ModalExample = (props) => {
+const TxnModal = (props) => {
   const {
     buttonLabel = "Manage",
-    className,
-    retRef
+    retref = "2412412029"
   } = props;
 
   const [modal, setModal] = useState(false);
@@ -23,24 +22,28 @@ const ModalExample = (props) => {
       <Modal 
        isOpen={modal} 
        toggle={toggle} 
-       className={className}>
+      //  retref={retref}
+       >
         <ModalHeader 
          toggle={toggle}>
          
         </ModalHeader>
-        <ModalBody 
-        // retRef={this.props.retRef}
-        >
-          {/* {this.props.retRef} */}
-          Test
+        <ModalBody>
+          {retref}
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>Void/Refund</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
+          <Button 
+            color="primary" 
+            onClick={toggle}>Void/Refund
+          </Button>
+          <Button 
+            color="secondary" 
+            onClick={toggle}>Cancel
+          </Button>
         </ModalFooter>
       </Modal>
     </div>
   );
 }
 
-export default ModalExample;
+export default TxnModal;
