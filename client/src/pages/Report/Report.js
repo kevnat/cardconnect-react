@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import Heading from "../../components/Nav/Nav";
 import ReportForm from "../../components/reportForm";
-import FooterPage from "../../components/footer";
+import FooterTwo from "../../components/footerTwo";
 import API from "../../utils/API";
 import ModalExample from "../../components/modal";
 
@@ -134,7 +134,7 @@ componentDidMount() {
           
         </div>
         <div>
-          <FooterPage />
+          <FooterTwo />
         </div>
       </React.Fragment>
     );
