@@ -3,41 +3,46 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const TxnModal = (props) => {
-  const {
-    buttonLabel = "Manage",
-    retref = "2412412029"
+  //function txnModal contains the following props:
+  const { 
+    buttonLabel = "Manage", 
+    testProp = "test prop",
+    retref = "txnModal's retref prop"
   } = props;
 
-  const [modal, setModal] = useState(false);
+  //below are state variables
+  const [showModal, setShow, modalData] = useState(false);
 
-  const toggle = () => setModal(!modal)
+  const toggle = () => setShow(!showModal)
+
+  // const populateModal = () => modalData(this.props.retref)
 
   return (
     <div>
-      <Button 
-       color="primary" 
-       onClick={toggle}>
-       {buttonLabel}
-       </Button>
-      <Modal 
-       isOpen={modal} 
-       toggle={toggle} 
-      //  retref={retref}
-       >
-        <ModalHeader 
-         toggle={toggle}>
-         
+      <Button
+        color="primary"
+        onClick={toggle}>
+        {buttonLabel}
+      </Button>
+      <Modal
+        isOpen={showModal}
+        toggle={toggle}
+        >
+        <ModalHeader
+          toggle={toggle}>
+
         </ModalHeader>
         <ModalBody>
-          {retref}
+          {testProp}
+          
         </ModalBody>
         <ModalFooter>
-          <Button 
-            color="primary" 
+          <Button
+            color="primary"
             onClick={toggle}>Void/Refund
           </Button>
-          <Button 
-            color="secondary" 
+          <Button
+            color="secondary"
             onClick={toggle}>Cancel
           </Button>
         </ModalFooter>

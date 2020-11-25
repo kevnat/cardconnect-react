@@ -33,9 +33,16 @@ class ReportForm extends Component {
               if (handleModal) {
                 handleModal()
                 console.log('A row was clicked:', rowInfo.row.retref);
-                console.log(this.state);
+                return rowInfo.row.retref;
               }
-              return rowInfo.row.retref;
+                // this.props = rowInfo.row.retref;
+                //to do: consume entire row as json into currentRow prop and parse txnData in modal
+                // console.log("this.props=", this.props.getTdProps.rowInfo)
+                
+                // console.log("this.state=", this.state);
+                // return this.props
+              // }
+              // return rowInfo.row.retref;
             }
           }
         }
